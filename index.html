@@ -188,9 +188,12 @@
 <!-- Hero with Responsive Video Background -->
 <header class="hero d-flex flex-column justify-content-center align-items-center">
   <!-- Background Video -->
-  <video autoplay muted loop playsinline class="position-absolute w-100 h-100" style="object-fit: cover; z-index:-2;">
-    <source src="physiozen-hero-video.mp4" type="video/mp4">
-  </video>
+  <video autoplay muted loop playsinline preload="auto"
+       class="position-absolute w-100 h-100"
+       style="object-fit: cover; z-index:-1;">
+  <source src="physiozen-hero-video.mp4" type="video/mp4">
+</video>
+
 
   <!-- Dark Overlay -->
   <div class="position-absolute w-100 h-100" style="background: rgba(0,0,0,0.45); z-index:-1;"></div>
