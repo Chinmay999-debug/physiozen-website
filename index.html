@@ -189,10 +189,19 @@
 <header class="hero d-flex flex-column justify-content-center align-items-center">
   <!-- Background Video -->
   <video autoplay muted loop playsinline preload="auto"
+       poster="clinic-poster.jpg"
        class="position-absolute w-100 h-100"
        style="object-fit: cover; z-index:-1;">
-  <source src="freecompress-physiozen-hero-video.mp4" type="video/mp4">
+  
+  <!-- WebM version (preferred by Chrome/Android) -->
+  <source src="https://res.cloudinary.com/dyzclnlvd/video/upload/v1757938365/freecompress-physiozen-hero-video_ung0nu.webm" type="video/webm">
+
+  <!-- MP4 version (works everywhere else, including iOS Safari) -->
+  <source src="https://res.cloudinary.com/dyzclnlvd/video/upload/v1757938365/freecompress-physiozen-hero-video_ung0nu.mp4" type="video/mp4">
+
+  Your browser does not support the video tag.
 </video>
+
 
 
   <!-- Dark Overlay -->
