@@ -42,31 +42,6 @@
       font-weight: 700;
     }
 
-    /* Hero */
-    .hero {
-      height: 100vh;
-      position: relative;
-      color: #fff;
-      overflow: hidden;
-      text-align: center;
-    }
-    .hero video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    .hero h1 {
-      font-size: 4rem;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    }
-    .hero p {
-      font-size: 1.3rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.9);
-    }
 
     /* Buttons */
     .btn-primary {
@@ -170,19 +145,107 @@
 </script>
 
 <!-- Hero -->
-<header class="hero d-flex flex-column justify-content-center align-items-center">
+<header class="hero d-flex flex-column justify-content-center align-items-center text-center">
+  <!-- Background video -->
   <video autoplay muted loop playsinline>
     <source src="https://res.cloudinary.com/dyzclnlvd/video/upload/v1757938365/freecompress-physiozen-hero-video_ung0nu.webm" type="video/webm">
     <source src="https://res.cloudinary.com/dyzclnlvd/video/upload/v1757938365/freecompress-physiozen-hero-video_ung0nu.mp4" type="video/mp4">
   </video>
-  <div class="position-absolute w-100 h-100" style="background: rgba(0,0,0,0.45);"></div>
-  <h1 data-aos="fade-down">PhysioZen</h1>
-  <p class="mb-4" data-aos="fade-up" data-aos-delay="200">Heal. Recover. Move Better.</p>
-  <div data-aos="zoom-in" data-aos-delay="400">
-    <a href="tel:+918209442127" class="btn btn-primary me-2"><i class="bi bi-telephone"></i> Call Now</a>
-    <a href="https://wa.me/918209442127" class="btn btn-outline-light"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <img src="logo.png" alt="PhysioZen Logo" class="hero-logo animate-logo">
+    <div class="hero-buttons mt-3 animate-buttons">
+      <a href="tel:+918209442127" class="btn btn-primary me-2">
+        <i class="bi bi-telephone"></i> Call Now
+      </a>
+      <a href="https://wa.me/918209442127" class="btn btn-outline-light">
+        <i class="bi bi-whatsapp"></i> WhatsApp
+      </a>
+    </div>
   </div>
 </header>
+
+<style>
+/* Hero styling */
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  z-index: -1;
+}
+.hero-content {
+  z-index: 10;
+}
+
+/* Logo */
+.hero-logo {
+  max-width: 420px;
+  width: 90%;
+  height: auto;
+  margin: 0 auto 12px auto;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.5));
+}
+
+/* Buttons */
+.hero-buttons .btn {
+  padding: 12px 28px;
+  font-weight: 600;
+}
+
+/* Fade/Zoom Animations */
+.animate-logo {
+  animation: fadeZoom 1.2s ease forwards;
+}
+.animate-buttons {
+  animation: fadeUp 1.5s ease forwards;
+}
+@keyframes fadeZoom {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-logo { max-width: 360px; }
+}
+@media (max-width: 768px) {
+  .hero-logo { max-width: 280px; }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero-buttons .btn {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+</style>
+
 
 <!-- About -->
 <section class="container my-5" id="about">
@@ -550,8 +613,8 @@
         <p class="mb-3"><i class="bi bi-geo-alt me-2 text-primary"></i> Jaipur, Rajasthan</p>
         <div>
           <a href="https://wa.me/918209442127" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="bi bi-whatsapp"></i></a>
-          <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.facebook.com/share/19dpQ4XVBi/?mibextid=wwXIfr" class="btn btn-outline-primary btn-sm rounded-circle me-2"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/dr.rudraksh_?igsh=MTB3NnVhdjd5bW5vcQ%3D%3D&utm_source=qr" class="btn btn-outline-primary btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
         </div>
       </div>
 
