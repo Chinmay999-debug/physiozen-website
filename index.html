@@ -71,6 +71,66 @@
     #doctor img:hover { transform: scale(1.05); }
 
     /* Services (no card background box) */
+    /* Services Section */
+    #services {
+      background: #ffffff; /* or #f9fafc for alternate background */
+      padding: 80px 0;
+    }
+
+    /* Flip Card Container */
+.flip-card {
+  perspective: 1000px;
+  cursor: pointer;
+  height: 280px;
+  border-radius: 16px;
+  background: #fff; /* ✅ gives card look */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.flip-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Inner flip functionality */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+  border-radius: 16px;
+}
+
+/* Front & Back */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.flip-card-front {
+  background: #fff; /* front face stays clean */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, #ffffff, #f9fafc);
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  text-align: left;
+}
+
+
     #services .flip-card { perspective:1000px; cursor:pointer; height:280px; }
     .flip-card-inner {
       position:relative; width:100%; height:100%;
